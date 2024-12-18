@@ -29,7 +29,8 @@ namespace ArrayExamples
 
             for (int i = 0; i < numbers.Length; i++)
             {
-
+                numbers[i] += 1;
+                q1Output.Text += numbers[i] + " ";
             }
 
             /// 2. Sum all the values in the given array and 
@@ -40,13 +41,17 @@ namespace ArrayExamples
 
             int sum = 0;
 
-
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                sum += numbers[i];
+            }
+            q2Output.Text += sum + " ";
 
             /// 3. Perform the following on the given array, then 
             /// display the updated array values.
             ///
             /// - add 5 to the element at index 1
-            /// - multiple the element at index 2 by element 
+            /// - multiply the element at index 2 by element 
             /// at index 4, and place result back at index 2
             /// - subtract the element at index 1 from element 
             /// at index 0 and place result in at index 0
@@ -55,8 +60,17 @@ namespace ArrayExamples
             /// Sample Output
             /// -6 8 24 6 5
 
+            numbers[1] += 5;
+            numbers[2] = numbers[2] * numbers[4];
+            numbers[0] = numbers[0] - numbers[1];
+            int tempValue = numbers[3];
+            numbers[3] = numbers[4];
+            numbers[4] = tempValue;
 
-
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                q3Output.Text += numbers[i] + " ";
+            }
         }
     }
 }
